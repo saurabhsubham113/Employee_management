@@ -51,17 +51,12 @@ export class EmployeeListComponent implements OnInit {
     this.service.delEmp(data)
     .subscribe(response=>{
       if(response['status'] === 'success'){
+        console.log(data)
         alert('successfully deleted')
-        this.redirectTo('/employees')
+        this.getDetails()
       }else{
         alert('something went wrong!!!')
       }
     })
   }
-
-  redirectTo(url: string) {
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
-    this.router.navigate([url]));
-  }
-
 }

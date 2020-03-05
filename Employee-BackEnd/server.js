@@ -24,7 +24,6 @@ app.get('/view/:id',(request,response)=>{
 
     db.connection.query(statement,(error,result)=>{
         const data = result[0]
-        console.log(data)
         response.send(utils.createResponse(error,data))
     })
 })
@@ -65,6 +64,6 @@ app.delete('/delete/:id',(request,response)=>{
     })
 })
 
-app.listen(process.env.PORT || 8080,()=>{
+app.listen(3000,()=>{
     console.log('server started on port 3000')
 })
