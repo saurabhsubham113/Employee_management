@@ -1,0 +1,11 @@
+.form-group{
+    padding-top: 40px;
+}
+p{
+    margin-top: 2%;
+}
+#link{
+    cursor: pointer;
+    text-decoration:underline ;
+    color: blue;
+}

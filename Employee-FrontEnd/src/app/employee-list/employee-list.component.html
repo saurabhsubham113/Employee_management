@@ -1,0 +1,38 @@
+<div class="form-group">
+    <label >Filter By:</label>
+    <input type="text" #querry (keyup)="filter(querry.value)" class="form-control w-25 p-2" placeholder="search...">
+    <p class="pt-6 mt-10">Total no. of employees : {{filterEmp.length}}</p>
+</div>
+
+
+    
+        <table class="table table-bordered table-striped table-responsive-sm">
+            <thead>
+                <tr class="text-center">
+                    <th>Emp Id</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of filterEmp ;let i = index" class="text-center">
+                    <td [routerLink]='["/details",e.id]' id="link">{{e.id}}</td>
+                    <td>{{e.name}}</td>
+                    <td>{{e.location}}</td>
+                    <td>{{e.email}}</td>
+                    <td>{{e.mobile}}</td>
+                    <td>
+                        <button [routerLink]='["/edit",e.id]' (click)="set()" class="btn btn-primary btn-sm">edit</button>
+                    </td>
+                    <td>
+                        <button (click)="onDelete(e.id)" class="btn btn-danger btn-sm">delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+   
+

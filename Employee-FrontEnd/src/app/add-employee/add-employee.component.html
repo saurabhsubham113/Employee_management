@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <form #add='ngForm' (ngSubmit)="onSubmit(add.value)">
+            <div class="form-group">
+                <label for="">Employee Name</label>
+                <input type="text" class="form-control" ngModel name="name" required placeholder="John Adam" max="30">
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <select id="location" #location="ngModel" ngModel name="location" class="form-control" required>
+                    <option selected disabled hidden>Select Location</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">Email</label>
+                <input type="email" class="form-control" ngModel name="email" required placeholder="john@mail.com" max="30">
+            </div>
+            <div class="form-group">
+                <label for="">Mobile</label>
+                <input type="tel" class="form-control" ngModel name="mobile" required placeholder="9876543210" max="10">
+            </div>
+            <button type="submit" [disabled]='!add.valid' class="btn btn-success">Submit</button>
+            <button type="reset" class="btn btn-primary float-right">Cancel</button>
+        </form>
+    </div>
+    <div class="col-md-3"></div>
+</div>
